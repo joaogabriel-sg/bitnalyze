@@ -1,3 +1,14 @@
+:root {
+  --white-color: #ffffff;
+  --light-color: #f3f3f8;
+  --dark-color: #051721;
+  --orange-color: #f68927;
+  --green-color: #276968;
+  --red-color: #ec3710;
+  --shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
+  --rounding: 2.5rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,3 +16,110 @@
   font-family: "Nunito", Arial, Helvetica, sans-serif;
   font-size: 10px;
 }
+
+body {
+  background: var(--light-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+.container {
+  max-width: 94rem;
+  margin: 0 auto;
+  padding: 3.2rem 1%;
+}
+
+/*  HEADER  */
+header#header {
+  background: var(--white-color);
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__menu {
+  display: flex;
+}
+
+.header__menu li a {
+  display: block;
+  margin-left: 2rem;
+  font-size: 1.8rem;
+  color: var(--orange-color);
+  position: relative;
+}
+
+.header__menu li a::before {
+  content: "";
+  background: var(--orange-color);
+  width: 0rem;
+  height: 0.1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  transition: width 0.3s linear;
+}
+
+.header__menu li a:hover::before {
+  width: 100%;
+}
+/* -=-=-=-=-=-=-=-=-=- */
+
+/* CALL */
+section#call {
+  width: 100%;
+  height: calc(100vh - 9.7rem);
+  background: url("../img/hero-image.svg") no-repeat;
+  background-position: 50vw bottom;
+}
+
+.call {
+  padding: 12.8rem 1%;
+  text-align: center;
+}
+
+.call__title {
+  font-weight: 700;
+  font-size: 4.8rem;
+  color: var(--dark-color);
+}
+
+.call__subtitle {
+  margin: 1.6rem 0 3.2rem 0;
+  font-weight: 300;
+  font-size: 1.6rem;
+  color: var(--dark-color);
+}
+
+.call__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--orange-color);
+  width: 30rem;
+  height: 6.7rem;
+  margin: 0 auto;
+  border-radius: var(--rounding);
+  font-weight: 600;
+  font-size: 2.4rem;
+  color: var(--white-color);
+}
+/* -=-=-=-=-=-=-=-=-=- */
