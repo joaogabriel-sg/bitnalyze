@@ -42,6 +42,13 @@ img {
   padding: 3.2rem 1%;
 }
 
+.card {
+  background: var(--white-color);
+  padding: 3.2rem;
+  border-radius: var(--rounding);
+  box-shadow: var(--shadow);
+}
+
 /*  HEADER  */
 header#header {
   background: var(--white-color);
@@ -123,3 +130,180 @@ section#call {
   color: var(--white-color);
 }
 /* -=-=-=-=-=-=-=-=-=- */
+
+/* DADOS */
+section#dados {
+  width: 100%;
+}
+
+.dados {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.dados > .card {
+  min-height: 30rem;
+}
+
+.divider {
+  background: var(--light-color);
+  width: 100%;
+  height: 0.2rem;
+  margin: 3.2rem 0;
+  border-radius: var(--rounding);
+}
+
+.dados__graphic {
+  grid-column: 1 / -1;
+}
+
+.dados__change-value p,
+.dados__change-value span {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--dark-color);
+}
+
+.dados__change-value p {
+  margin-bottom: 2.4rem;
+}
+
+.change__result-btc {
+  font-size: 2.4rem;
+}
+
+.dados__change {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.change__container {
+  background: var(--light-color);
+  width: 20rem;
+  height: 0.5rem;
+  border-radius: var(--rounding);
+  position: relative;
+}
+
+.change__background {
+  background: var(--orange-color);
+  width: 25%;
+  height: 100%;
+  border-radius: var(--rounding);
+}
+
+.change__ball {
+  background: var(--orange-color);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+span.change__symbol-brl {
+  margin-left: 1.6rem;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: var(--dark-color);
+}
+
+.change__price-brl {
+  max-width: 15rem;
+  border: none;
+  outline: 0;
+  margin-left: 0.4rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--dark-color);
+  position: relative;
+}
+
+.dados__price {
+  position: relative;
+}
+
+.price__btc-title {
+  display: flex;
+  align-items: center;
+}
+
+.price__btc-title i {
+  font-size: 6.4rem;
+  color: var(--dark-color);
+}
+
+.price__btc-title h2 {
+  margin-left: 1.6rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--dark-color);
+}
+
+.price__btc-now {
+  margin-top: 0.8rem;
+  font-weight: 700;
+  font-size: 4.8rem;
+  color: var(--dark-color);
+}
+
+.price__btc-now span {
+  font-weight: 400;
+  font-size: 2.8rem;
+  color: var(--dark-color);
+}
+
+.price__btc-variation,
+.price__btc-hundred,
+.price__btc-hundred span {
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.price__btc-variation span {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.price__btc-hundred {
+  margin-top: 1.6rem;
+}
+
+span.v-positive {
+  color: var(--green-color);
+}
+
+span.v-negative {
+  color: var(--red-color);
+}
+
+.price__btc-countdown {
+  position: absolute;
+  top: 3.2rem;
+  right: 3.2rem;
+}
+
+.btc-countdown__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 2px solid var(--dark-color);
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+.circle__time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-size: 1.4rem;
+}
