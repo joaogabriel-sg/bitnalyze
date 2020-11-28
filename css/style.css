@@ -307,3 +307,61 @@ span.v-negative {
   font-weight: 700;
   font-size: 1.4rem;
 }
+/* -=-=-=-=-=-=-=-=-=- */
+
+.banner {
+  background: var(--white-color);
+  width: 100%;
+}
+
+.banner__container {
+  padding: 6.4rem 1%;
+  text-align: center;
+}
+
+.banner-title {
+  position: relative;
+  margin-bottom: 6.4rem;
+  padding-bottom: 1.6rem;
+  font-weight: 700;
+  font-size: 3.6rem;
+  color: var(--orange-color);
+}
+
+.banner-title::before {
+  content: "";
+  background: var(--orange-color);
+  width: 7rem;
+  height: 0.3rem;
+  border-radius: var(--rounding);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ADVANTAGES */
+.vantagens__list {
+  display: grid;
+  gap: 8rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.list__item i {
+  font-size: 6.4rem;
+  color: var(--orange-color);
+}
+
+.mini-divider {
+  background: var(--orange-color);
+  width: 3rem;
+  height: 0.3rem;
+  margin: 3.2rem auto;
+  border-radius: var(--rounding);
+}
+
+.list__item p {
+  max-width: 24rem;
+  font-size: 1.6rem;
+}
+/* -=-=-=-=-=-=-=-=-=- */
