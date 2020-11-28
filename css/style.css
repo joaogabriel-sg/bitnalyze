@@ -365,3 +365,25 @@ span.v-negative {
   font-size: 1.6rem;
 }
 /* -=-=-=-=-=-=-=-=-=- */
+
+/* PARCEIROS */
+section#parceiros {
+  margin-top: 3.2rem;
+}
+
+.slide__wrapper {
+  overflow: hidden;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+}
+
+.slide li {
+  min-width: 18rem;
+  margin: 0 6rem;
+  display: flex;
+  justify-content: center;
+}
+/* -=-=-=-=-=-=-=-=-=- */
