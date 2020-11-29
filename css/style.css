@@ -2,6 +2,7 @@
   --white-color: #ffffff;
   --light-color: #f3f3f8;
   --dark-color: #051721;
+  --dark-light-color: #0d2431;
   --orange-color: #f68927;
   --green-color: #276968;
   --red-color: #ec3710;
@@ -475,5 +476,55 @@ section#ajuda {
 .result a i {
   margin-right: 1.6rem;
   font-size: 3rem;
+}
+/* -=-=-=-=-=-=-=-=-=- */
+
+/* FOOTER */
+footer#footer {
+  background: var(--dark-color);
+  width: 100%;
+  margin-top: 3.2rem;
+}
+
+.footer {
+  width: 100%;
+  padding: 6.4rem 1%;
+}
+
+.footer .divider {
+  background: var(--dark-light-color);
+}
+
+.footer__ft-content {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 30rem 1fr;
+}
+
+.ft-content__social p,
+.ft-content__social a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.6rem;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--white-color);
+}
+
+.ft-content__social i {
+  margin-right: 1.6rem;
+  font-size: 2.4rem;
+}
+
+.ft-content__about h2 {
+  margin-bottom: 1.6rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--white-color);
+}
+
+.ft-content__about p {
+  font-size: 1.6rem;
+  color: var(--white-color);
 }
 /* -=-=-=-=-=-=-=-=-=- */
