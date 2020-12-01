@@ -30,32 +30,6 @@
     font-size: 3.8rem;
   }
 
-  .ajuda {
-    grid-template-columns: 1fr;
-  }
-  .questions-side__title {
-    font-size: 3.8rem;
-  }
-  .questions-side__subtitle {
-    font-size: 1.4rem;
-  }
-  .questions__question {
-    font-size: 1.6rem;
-    width: 100%;
-  }
-  .faq__results-side {
-    display: none;
-    background-size: 15rem;
-    min-height: 36rem;
-  }
-  .result__title {
-    font-size: 2.4rem;
-  }
-  .result p,
-  .result a {
-    font-size: 1.6rem;
-  }
-
   .footer__ft-content {
     display: flex;
     gap: 0;
