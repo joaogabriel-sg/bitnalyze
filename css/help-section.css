@@ -1,0 +1,146 @@
+section#ajuda {
+  margin-top: 3.2rem;
+}
+
+.ajuda {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.questions-side__title {
+  font-weight: 700;
+  font-size: 4.2rem;
+  color: var(--dark-color);
+}
+
+.questions-side__subtitle {
+  margin-top: 1.6rem;
+  font-size: 1.6rem;
+  color: var(--dark-color);
+}
+
+.questions-side__questions {
+  margin-top: 6.4rem;
+}
+
+.questions__question {
+  width: calc(100% + 3.5rem);
+  padding: 3.2rem;
+  font-size: 1.8rem;
+  color: var(--dark-color);
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+  border-radius: var(--rounding);
+}
+
+.questions__question:hover {
+  color: var(--orange-color);
+}
+
+.questions__question.open {
+  background: var(--white-color);
+  box-shadow: var(--shadow);
+  color: var(--dark-color);
+}
+
+.questions__question + .questions__question {
+  margin-top: 3.2rem;
+}
+
+.faq__answers-side {
+  background: var(--white-color) url("../img/faq-characters.svg") no-repeat
+    calc(100% - 3.2rem) calc(100% - 3.2rem);
+  min-height: 75rem;
+  padding: 3.2rem;
+  border-radius: var(--rounding);
+}
+
+.answer {
+  display: none;
+  opacity: 0;
+  transform: translateX(2rem);
+  transition: transform 0.3s;
+}
+
+.answer.open {
+  display: block;
+  animation: open 0.3s forwards;
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.answer__title {
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: var(--dark-color);
+}
+
+.answer p,
+.answer a {
+  display: flex;
+  align-items: center;
+  margin-top: 2.4rem;
+  font-size: 2rem;
+  color: var(--dark-color);
+}
+
+.answer a i {
+  margin-right: 1.6rem;
+  font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+  .ajuda {
+    grid-template-columns: 1fr;
+  }
+
+  .questions-side__title {
+    font-size: 3.8rem;
+    text-align: center;
+  }
+
+  .questions-side__subtitle {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .questions-side__questions {
+    display: none;
+  }
+
+  .faq__answers-side {
+    display: block;
+    background-size: 15rem;
+    min-height: 36rem;
+  }
+
+  .answer {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .answer + .answer {
+    margin-top: 4.8rem;
+  }
+
+  .answer__title {
+    font-size: 2.4rem;
+  }
+
+  .answer p,
+  .answer a {
+    font-size: 1.6rem;
+  }
+}
