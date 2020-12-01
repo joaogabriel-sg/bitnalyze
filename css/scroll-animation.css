@@ -1,0 +1,10 @@
+.js [data-anime="scroll"] {
+  transform: translate3d(0, 2rem, 0);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.js [data-anime="scroll"].active {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
