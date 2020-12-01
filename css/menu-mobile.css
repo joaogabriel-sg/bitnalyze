@@ -1,0 +1,81 @@
+@media (max-width: 600px) {
+  .js .header__menu {
+    display: none;
+  }
+  .js .header__mobile-burger {
+    display: block;
+  }
+  .js .header__mobile-burger + .header__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--orange-color);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    z-index: 9999;
+    transition: transform 0.3s;
+  }
+  .js .header__mobile-burger.active + .header__menu {
+    transform: translateX(0);
+  }
+  .js .header__mobile-burger.active + .header__menu a {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: var(--white-color);
+  }
+  .js .header__mobile-burger.active + .header__menu li {
+    transform: translateX(10rem);
+    opacity: 0;
+  }
+  .js .header__mobile-burger.active + .header__menu li:nth-child(1) {
+    animation: show-menu-mobile-item 0.3s 0.2s forwards;
+  }
+  .js .header__mobile-burger.active + .header__menu li:nth-child(2) {
+    animation: show-menu-mobile-item 0.3s 0.4s forwards;
+  }
+  .js .header__mobile-burger.active + .header__menu li:nth-child(3) {
+    animation: show-menu-mobile-item 0.3s 0.6s forwards;
+  }
+  .js .header__mobile-burger.active + .header__menu li:nth-child(4) {
+    animation: show-menu-mobile-item 0.3s 0.8s forwards;
+  }
+  @keyframes show-menu-mobile-item {
+    from {
+      transform: translateX(10rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .js .mobile-burger__bar {
+    background: var(--orange-color);
+    width: 2.5rem;
+    height: 0.3rem;
+    border-radius: var(--rounding);
+    transition: transform 0.3s, opacity 0.3s, background 0.6s;
+  }
+  .js .mobile-burger__bar + .mobile-burger__bar {
+    margin-top: 0.4rem;
+  }
+  .js .active .mobile-burger__bar {
+    background: var(--white-color);
+  }
+  .js .active .mobile-burger__bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .js .active .mobile-burger__bar:nth-child(2) {
+    transform: translateX(-1rem);
+    opacity: 0;
+  }
+  .js .active .mobile-burger__bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}

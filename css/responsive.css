@@ -1,0 +1,100 @@
+@media (max-width: 1000px) {
+  section#call {
+    background-size: 65rem;
+    background-position: 40vw bottom;
+  }
+}
+
+@media (max-width: 850px) {
+  .dados {
+    grid-template-columns: 1fr;
+  }
+  .dados__change {
+    justify-content: initial;
+  }
+  span.change__symbol-brl {
+    font-size: 1.8rem;
+  }
+  .change__price-brl {
+    width: 100%;
+    max-width: 20rem;
+    font-size: 3.2rem;
+  }
+  .dados__change-value span {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .call__title {
+    font-size: 3.8rem;
+  }
+
+  .ajuda {
+    grid-template-columns: 1fr;
+  }
+  .questions-side__title {
+    font-size: 3.8rem;
+  }
+  .questions-side__subtitle {
+    font-size: 1.4rem;
+  }
+  .questions__question {
+    font-size: 1.6rem;
+    width: 100%;
+  }
+  .faq__results-side {
+    display: none;
+    background-size: 15rem;
+    min-height: 36rem;
+  }
+  .result__title {
+    font-size: 2.4rem;
+  }
+  .result p,
+  .result a {
+    font-size: 1.6rem;
+  }
+
+  .footer__ft-content {
+    display: flex;
+    gap: 0;
+    flex-direction: column-reverse;
+  }
+  .ft-content__about {
+    margin-bottom: 3.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  section#call {
+    background-size: 40rem;
+    background-position: 25vw bottom;
+  }
+
+  .change__price-brl {
+    width: 100%;
+    max-width: 20rem;
+    font-size: 2rem;
+  }
+  .dados__change-value span {
+    font-size: 1.6rem;
+  }
+  .price__btc-now {
+    font-size: 3.6rem;
+  }
+
+  .banner-title {
+    font-size: 2.8rem;
+  }
+
+  .vantagens__list {
+    gap: 6.4rem;
+    grid-template-columns: 1fr;
+  }
+  .list__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
