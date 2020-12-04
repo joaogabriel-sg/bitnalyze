@@ -64,7 +64,7 @@
                 <div class="card dados__price" data-anime="scroll">
                     <div class="price__btc-countdown">
                         <div class="btc-countdown__circle"></div>
-                        <div class="circle__time">10</div>
+                        <div class="circle__time">30</div>
                     </div>
                     <div class="price__btc-title">
                         <i class="fab fa-bitcoin"></i>
@@ -72,10 +72,12 @@
                     </div>
                     <p class="price__btc-now">R$ <span></span></p>
                     <div class="divider"></div>
-                    <p class="price__btc-variation">Variação: <span class="v-positive">12.03%</span></p>
+                    <p class="price__btc-variation">Variação: <span></span></p>
                     <p class="price__btc-hundred">R$ 100 compram <span></span> bitcoins</p>
                 </div>
-                <div class="card dados__graphic" data-anime="scroll"></div>
+                <div class="card dados__graphic" data-anime="scroll">
+                    <canvas id="myChart"></canvas>
+                </div>
             </div>
         </div>
     </section>
@@ -174,6 +176,7 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js" integrity="sha512-SuxO9djzjML6b9w9/I07IWnLnQhgyYVSpHZx0JV97kGBfTIsUYlWflyuW4ypnvhBrslz1yJ3R+S14fdCWmSmSA==" crossorigin="anonymous"></script>
     <script type="module" src="./js/script.js"></script>
 </body>
 </html>

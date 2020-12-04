@@ -232,16 +232,16 @@ span.change__symbol-brl {
   font-size: 1.6rem;
 }
 
-.price__btc-hundred {
-  margin-top: 1.6rem;
-}
-
-span.v-positive {
+.price__btc-variation span.v-positive {
   color: var(--green-color);
 }
 
-span.v-negative {
+.price__btc-variation span.v-negative {
   color: var(--red-color);
+}
+
+.price__btc-hundred {
+  margin-top: 1.6rem;
 }
 
 .price__btc-countdown {

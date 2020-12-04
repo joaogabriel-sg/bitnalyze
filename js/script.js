@@ -17,7 +17,15 @@ const smoothScroll = new SmoothScroll('a[href^="#"]');
 smoothScroll.init();
 
 const bitcoinDatas = new BitcoinDatas({
-  now: '.price__btc-now span',
-  forHundred: '.price__btc-hundred span',
+  priceNowDiv: '.price__btc-now span',
+  hundredDiv: '.price__btc-hundred span',
+  countdownTimeDiv: '.circle__time',
+  variationDetails: {
+    variationDiv: '.price__btc-variation span',
+    positiveClass: 'v-positive',
+    negativeClass: 'v-negative',
+  },
+  graph: 'canvas#myChart',
+  dataQuantity: 10,
 });
 bitcoinDatas.init();
