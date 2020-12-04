@@ -2,7 +2,6 @@ export default class SmoothScroll {
   constructor(links, options) {
     this.links = document.querySelectorAll(links);
     this.mobileMenu = document.querySelector('.header__mobile-burger');
-    this.eventsList = ['click', 'touchstart'];
     this.goToSection = this.goToSection.bind(this);
 
     if (options === undefined) {
@@ -27,9 +26,7 @@ export default class SmoothScroll {
 
   addEventToLinks() {
     this.links.forEach((link) => {
-      this.eventsList.forEach((eventItem) => {
-        link.addEventListener(eventItem, this.goToSection);
-      });
+      link.addEventListener('click', this.goToSection);
     });
   }
 
