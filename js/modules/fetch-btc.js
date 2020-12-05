@@ -6,6 +6,7 @@ export default class BitcoinDatas {
     variationDetails: { variationDiv, positiveClass, negativeClass },
     graph,
     dataQuantity,
+    changeDetails: { changeRange, changePriceBRL, changePriceBTC },
   }) {
     this.priceNowDiv = document.querySelector(priceNowDiv);
     this.hundredDiv = document.querySelector(hundredDiv);
@@ -21,7 +22,106 @@ export default class BitcoinDatas {
     this.ctx = document.querySelector(graph).getContext('2d');
     this.isGraphfirstCreation = true;
 
+    this.changeRange = document.querySelector(changeRange);
+    this.changePriceBRL = document.querySelector(changePriceBRL);
+    this.changePriceBTC = document.querySelector(changePriceBTC);
+
     this.btcDatas = [];
+  }
+
+  applyRegexp(valueFixed) {
+    const partInteger = valueFixed.replace(/[.,](\d+)/g, '');
+    const partDecimal = valueFixed.replace(/(\d+)[.,]/g, '');
+
+    if (partInteger.toString().length === 1) {
+      this.changePriceBRL.value = `${partInteger},${partDecimal || '00'}`;
+    }
+    if (partInteger.toString().length === 2) {
+      this.changePriceBRL.value = `${partInteger},${partDecimal || '00'}`;
+    }
+    if (partInteger.toString().length === 3) {
+      this.changePriceBRL.value = `${partInteger},${partDecimal || '00'}`;
+    }
+    if (partInteger.toString().length === 4) {
+      const newInteger = partInteger.replace(/([\d]{1})([\d+]{3})/g, '$1.$2');
+      this.changePriceBRL.value = `${newInteger},${partDecimal || '00'}`;
+    }
+    if (partInteger.toString().length === 5) {
+      const newInteger = partInteger.replace(/([\d]{2})([\d+]{3})/g, '$1.$2');
+      this.changePriceBRL.value = `${newInteger},${partDecimal || '00'}`;
+    }
+    if (partInteger.toString().length === 6) {
+      const newInteger = partInteger.replace(/([\d]{3})([\d+]{3})/g, '$1.$2');
+      this.changePriceBRL.value = `${newInteger},${partDecimal || '00'}`;
+    }
+  }
+
+  verifyChangePriceBRL() {
+    if (this.changePriceBRL.value.length === 0) {
+      this.changePriceBRL.value = '0,00';
+      return;
+    }
+
+    if (this.changePriceBRL.value > 100000) {
+      this.changePriceBRL.value = '100.000,00';
+      this.changePriceBRL.removeEventListener('blur', this.verifyChangePriceBRL);
+    } else {
+      const priceBrlFixed = Number(this.changePriceBRL.value).toFixed(2);
+
+      if (!priceBrlFixed.includes('.')) {
+        this.changePriceBRL.value = '0,00';
+      } else {
+        this.applyRegexp(priceBrlFixed);
+      }
+    }
+  }
+
+  defineUpdatedChange(value) {
+    const toPercentage = value / 1000;
+    const inBTC = value / this.btcDatas[this.btcDatas.length - 1].last;
+
+    this.changeRange.value = value;
+    this.changeRange.style.background = `linear-gradient(90deg, var(--orange-color) ${toPercentage}%, var(--light-color) ${toPercentage}%)`;
+    this.changePriceBTC.innerText = inBTC.toFixed(8);
+  }
+
+  defineInitialChange() {
+    this.changeRange.value = 0;
+    this.changeRange.style.background = 'linear-gradient(90deg, var(--light-color) 50%, var(--light-color) 50%)';
+    this.changePriceBTC.innerText = '0.00000000';
+  }
+
+  onKeyUpEvent() {
+    const typedValue = Number(this.changePriceBRL.value);
+
+    if (Number.isNaN(typedValue)) {
+      this.defineInitialChange();
+    } else if (typedValue > 100000) {
+      this.verifyChangePriceBRL();
+      this.defineUpdatedChange(100000);
+    } else {
+      this.changePriceBRL.addEventListener('blur', this.verifyChangePriceBRL);
+      this.defineUpdatedChange(typedValue);
+    }
+  }
+
+  onInputEvent() {
+    const { value } = this.changeRange;
+    const toPercentage = value / 1000;
+    const inBTC = value / this.btcDatas[this.btcDatas.length - 1].last;
+
+    this.changeRange.style.background = `linear-gradient(90deg, var(--orange-color) ${toPercentage}%, var(--light-color) ${toPercentage}%)`;
+
+    this.changePriceBRL.value = Number(value).toFixed(2).replace('.', ',');
+    this.changePriceBTC.innerText = inBTC.toFixed(8);
+
+    const priceFixed = Number(this.changePriceBRL.value.substring(0, this.changePriceBRL.value.indexOf(','))).toFixed(2);
+    this.applyRegexp(priceFixed);
+  }
+
+  activeBrlToBtcChange() {
+    this.changeRange.addEventListener('input', this.onInputEvent);
+    this.changePriceBRL.addEventListener('keyup', this.onKeyUpEvent);
   }
 
   insertDatasInGraph(datas) {
@@ -153,12 +253,16 @@ export default class BitcoinDatas {
     this.getBitcoinDatas = this.getBitcoinDatas.bind(this);
     this.getActualHour = this.getActualHour.bind(this);
     this.countdownTimer = this.countdownTimer.bind(this);
+    this.onInputEvent = this.onInputEvent.bind(this);
+    this.onKeyUpEvent = this.onKeyUpEvent.bind(this);
+    this.verifyChangePriceBRL = this.verifyChangePriceBRL.bind(this);
   }
 
   init() {
     if (this.priceNowDiv && this.hundredDiv && this.variationDiv) {
       this.functionsToBind();
       this.getBitcoinDatas();
+      this.activeBrlToBtcChange();
       setInterval(this.countdownTimer, 1000);
     }
     return this;
