@@ -1,0 +1,187 @@
+section#dados {
+  width: 100%;
+}
+
+.dados {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.dados > .card {
+  min-height: 30rem;
+}
+
+.divider {
+  background: var(--light-color);
+  width: 100%;
+  height: 0.2rem;
+  margin: 3.2rem 0;
+  border-radius: var(--rounding);
+}
+
+.dados__graphic {
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.dados__graphic canvas {
+  width: 100%;
+}
+
+.dados__change {
+  margin-bottom: 2.4rem;
+}
+
+.dados__change-value p,
+.dados__change-value span {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--dark-color);
+}
+
+.dados__change-value p {
+  margin-bottom: 2.4rem;
+}
+
+.change__result-btc span {
+  color: var(--orange-color);
+}
+
+.dados__change-value small {
+  font-size: 1.2rem;
+  color: var(--dark-color);
+}
+
+.change__container {
+  margin-bottom: 1.6rem;
+}
+
+.change__container input[type="range"] {
+  -webkit-appearance: none;
+  background: linear-gradient(
+    90deg,
+    var(--light-color) 50%,
+    var(--light-color) 50%
+  );
+  width: 20rem;
+  height: 0.5rem;
+  outline: none;
+}
+
+.change__container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: var(--orange-color);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.change__brl {
+  display: flex;
+  align-items: center;
+  margin-top: 2.4rem;
+}
+
+span.change__symbol-brl {
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: var(--dark-color);
+}
+
+.change__price-brl {
+  display: inline-block;
+  max-width: 15rem;
+  border: none;
+  outline: 0;
+  margin-left: 0.4rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--dark-color);
+  position: relative;
+}
+
+.dados__price {
+  position: relative;
+}
+
+.price__btc-title {
+  display: flex;
+  align-items: center;
+}
+
+.price__btc-title i {
+  font-size: 6.4rem;
+  color: var(--dark-color);
+}
+
+.price__btc-title h2 {
+  margin-left: 1.6rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--dark-color);
+}
+
+.price__btc-now {
+  font-weight: 400;
+  font-size: 2.8rem;
+  color: var(--dark-color);
+}
+
+.price__btc-now span {
+  margin-top: 0.8rem;
+  font-weight: 700;
+  font-size: 4.8rem;
+  color: var(--dark-color);
+}
+
+.price__btc-variation,
+.price__btc-hundred,
+.price__btc-hundred span {
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.price__btc-variation span {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.price__btc-variation span.v-positive {
+  color: var(--green-color);
+}
+
+.price__btc-variation span.v-negative {
+  color: var(--red-color);
+}
+
+.price__btc-hundred {
+  margin-top: 1.6rem;
+}
+
+.price__btc-countdown {
+  position: absolute;
+  top: 3.2rem;
+  right: 3.2rem;
+}
+
+.btc-countdown__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 2px solid var(--dark-color);
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+.circle__time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-size: 1.4rem;
+}

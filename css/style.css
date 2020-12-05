@@ -1,6 +1,8 @@
 @import "./configs.css";
 @import "./general.css";
-@import "./help-section.css";
+@import "./section-datas.css";
+@import "./section-help.css";
+@import "./section-partners.css";
 @import "./menu-mobile.css";
 @import "./scroll-animation.css";
 @import "./responsive.css";

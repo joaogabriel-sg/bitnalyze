@@ -142,14 +142,37 @@ export default class BitcoinDatas {
       data: {
         labels: [],
         datasets: [{
-          label: 'Valor BTC:',
+          label: 'Valor BTC',
           data: [],
           backgroundColor: '#f68927',
           borderColor: '#051721',
           borderWidth: 1,
         }],
       },
-      options: {},
+      options: {
+        tooltips: {
+          backgroundColor: '#051721',
+          titleFontFamily: "'Nunito', 'Arial', 'Helvetica', sans-serif",
+          titleFontSize: 14,
+          titleAlign: 'center',
+          bodyFontFamily: "'Nunito', 'Arial', 'Helvetica', sans-serif",
+          bodyFontSize: 14,
+          xPadding: 8,
+          yPadding: 8,
+          cornerRadius: 10,
+        },
+        title: {
+          display: true,
+          text: 'Representação Gŕafica do Bitcoin',
+          fontFamily: "'Nunito', 'Arial', 'Helvetica', sans-serif",
+          fontSize: 18,
+          fontColor: '#051721',
+        },
+        legend: {
+          display: false,
+        },
+        responsive: false,
+      },
     });
   }
 
@@ -160,7 +183,7 @@ export default class BitcoinDatas {
   getActualHour({ date }) {
     const actualDate = new Date(date);
 
-    return `${this.isZeroNecessary(actualDate.getHours())}:${this.isZeroNecessary(actualDate.getMinutes())}:${this.isZeroNecessary(actualDate.getSeconds())}`;
+    return `${this.isZeroNecessary(actualDate.getHours())}h:${this.isZeroNecessary(actualDate.getMinutes())}m:${this.isZeroNecessary(actualDate.getSeconds())}s`;
   }
 
   createGraph() {

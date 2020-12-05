@@ -1,0 +1,18 @@
+section#parceiros {
+  margin-top: 3.2rem;
+}
+
+.slide__wrapper {
+  overflow: hidden;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+}
+
+.slide li {
+  margin: 0 6rem;
+  display: flex;
+  pointer-events: none;
+}
