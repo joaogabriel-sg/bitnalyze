@@ -3,6 +3,7 @@ import ScrollAnimation from './modules/scroll-animation.js';
 import AccordionList from './modules/accordion-list.js';
 import SmoothScroll from './modules/smooth-scroll.js';
 import BitcoinDatas from './modules/fetch-btc.js';
+import Slide from './modules/slide.js';
 
 const menuMobile = new MenuMobile('.header__mobile-burger');
 menuMobile.init();
@@ -26,7 +27,7 @@ const bitcoinDatas = new BitcoinDatas({
     negativeClass: 'v-negative',
   },
   graph: 'canvas#myChart',
-  dataQuantity: 10,
+  dataQuantity: 5,
   changeDetails: {
     changeRange: '.change__container input[type="range"]',
     changePriceBRL: '.change__price-brl',
@@ -34,3 +35,6 @@ const bitcoinDatas = new BitcoinDatas({
   },
 });
 bitcoinDatas.init();
+
+const slide = new Slide('.slide', '.slide__wrapper');
+slide.init();
