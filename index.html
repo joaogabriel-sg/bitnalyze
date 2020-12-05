@@ -49,17 +49,17 @@
                     <p>Com esse valor em reais:</p>
                     <div class="dados__change">
                         <div class="change__container">
-                            <div class="change__background"></div>
-                            <div class="change__ball"></div>
+                            <input type="range" value="50" min="0" max="100000" step="1">
                         </div>
                         <div class="change__brl">
                             <span class="change__symbol-brl">R$</span>
-                            <input type="text" name="price-brl" id="price-brl" value="100.000,00" class="change__price-brl">
+                            <input type="text" name="price-brl" id="price-brl" value="0,00" class="change__price-brl">
                         </div>
                     </div>
+                    <small>*Exemplo: Você digita 12345.67 e nós transformamos em 12.345,67</small>
                     <div class="divider"></div>
                     <p>Você compra aproximadamente:</p>
-                    <span class="change__result-btc">0.00010989 BTC</span>
+                    <p class="change__result-btc"><span>0.00000000</span> BTC</p>
                 </div>
                 <div class="card dados__price" data-anime="scroll">
                     <div class="price__btc-countdown">

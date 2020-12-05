@@ -27,5 +27,10 @@ const bitcoinDatas = new BitcoinDatas({
   },
   graph: 'canvas#myChart',
   dataQuantity: 10,
+  changeDetails: {
+    changeRange: '.change__container input[type="range"]',
+    changePriceBRL: '.change__price-brl',
+    changePriceBTC: '.change__result-btc span',
+  },
 });
 bitcoinDatas.init();

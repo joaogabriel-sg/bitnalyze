@@ -120,6 +120,10 @@ section#dados {
   grid-column: 1 / -1;
 }
 
+.dados__change {
+  margin-bottom: 2.4rem;
+}
+
 .dados__change-value p,
 .dados__change-value span {
   font-weight: 700;
@@ -131,35 +135,38 @@ section#dados {
   margin-bottom: 2.4rem;
 }
 
-.change__result-btc {
-  font-size: 2.4rem;
+.change__result-btc span {
+  color: var(--orange-color);
+}
+
+.dados__change-value small {
+  font-size: 1.2rem;
+  color: var(--dark-color);
 }
 
 .change__container {
-  background: var(--light-color);
+  margin-bottom: 1.6rem;
+}
+
+.change__container input[type="range"] {
+  -webkit-appearance: none;
+  background: linear-gradient(
+    90deg,
+    var(--light-color) 50%,
+    var(--light-color) 50%
+  );
   width: 20rem;
   height: 0.5rem;
-  border-radius: var(--rounding);
-  position: relative;
+  outline: none;
 }
 
-.change__background {
-  background: var(--orange-color);
-  width: 25%;
-  height: 100%;
-  border-radius: var(--rounding);
-}
-
-.change__ball {
+.change__container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
   background: var(--orange-color);
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
-  z-index: 100;
-  position: absolute;
-  top: 50%;
-  left: 25%;
-  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 .change__brl {
