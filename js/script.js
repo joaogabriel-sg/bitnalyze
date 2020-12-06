@@ -20,7 +20,10 @@ smoothScroll.init();
 const bitcoinDatas = new BitcoinDatas({
   priceNowDiv: '.price__btc-now span',
   hundredDiv: '.price__btc-hundred span',
-  countdownTimeDiv: '.circle__time',
+  countdownDetails: {
+    countdownNumber: '.countdown__number',
+    countdownCircle: '.price__btc-countdown svg circle',
+  },
   variationDetails: {
     variationDiv: '.price__btc-variation span',
     positiveClass: 'v-positive',

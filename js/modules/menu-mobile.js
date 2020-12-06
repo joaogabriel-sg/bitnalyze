@@ -3,7 +3,6 @@ import debounce from './debounce.js';
 export default class MenuMobile {
   constructor(menuMobile) {
     this.menuMobile = document.querySelector(menuMobile);
-    this.eventsList = ['click', 'touchstart'];
     this.openOrClosed = this.openOrClosed.bind(this);
     this.resizeWindow = debounce(this.resizeWindow.bind(this), 50);
   }
@@ -32,9 +31,7 @@ export default class MenuMobile {
   }
 
   addEventOpenOrClosed() {
-    this.eventsList.forEach((eventItem) => {
-      this.menuMobile.addEventListener(eventItem, this.openOrClosed);
-    });
+    this.menuMobile.addEventListener('click', this.openOrClosed);
   }
 
   init() {
