@@ -2,7 +2,7 @@ export default class BitcoinDatas {
   constructor({
     priceNowDiv,
     hundredDiv,
-    countdownTimeDiv,
+    countdownDetails: { countdownNumber, countdownCircle },
     variationDetails: { variationDiv, positiveClass, negativeClass },
     graph,
     dataQuantity,
@@ -16,7 +16,8 @@ export default class BitcoinDatas {
     this.positiveClass = positiveClass;
     this.negativeClass = negativeClass;
 
-    this.countdownTimeDiv = document.querySelector(countdownTimeDiv);
+    this.countdownNumber = document.querySelector(countdownNumber);
+    this.countdownCircle = document.querySelector(countdownCircle);
     this.countdownTime = 30;
 
     this.ctx = document.querySelector(graph).getContext('2d');
@@ -266,10 +267,12 @@ export default class BitcoinDatas {
   countdownTimer() {
     if (this.countdownTime === 0) {
       this.countdownTime = 30;
+      this.countdownCircle.classList.remove('anime');
       this.getBitcoinDatas();
     }
-    this.countdownTimeDiv.innerText = this.countdownTime;
+    this.countdownCircle.classList.add('anime');
     this.countdownTime--;
+    this.countdownNumber.innerText = this.countdownTime;
   }
 
   functionsToBind() {

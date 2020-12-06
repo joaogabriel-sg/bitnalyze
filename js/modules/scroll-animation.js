@@ -5,6 +5,7 @@ export default class ScrollAnimation {
     this.elements = [...document.querySelectorAll(elements)];
     this.halfWindow = window.innerHeight * 0.85;
     this.checkDistances = debounce(this.checkDistances.bind(this), 30);
+    this.getElementsInformations = debounce(this.getElementsInformations.bind(this), 30);
   }
 
   getElementsInformations() {
@@ -12,6 +13,7 @@ export default class ScrollAnimation {
       const offset = element.offsetTop;
       return { element, offset: Math.round(offset - this.halfWindow) };
     });
+    this.checkDistances();
   }
 
   checkDistances() {
@@ -29,6 +31,7 @@ export default class ScrollAnimation {
       this.getElementsInformations();
       this.checkDistances();
       window.addEventListener('scroll', this.checkDistances);
+      window.addEventListener('resize', this.getElementsInformations);
     }
     return this;
   }

@@ -164,20 +164,39 @@ span.change__symbol-brl {
   position: absolute;
   top: 3.2rem;
   right: 3.2rem;
+  width: 3.6rem;
+  height: 3.6rem;
 }
 
-.btc-countdown__circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.2rem;
-  height: 3.2rem;
-  border: 2px solid var(--dark-color);
-  border-radius: 50%;
-  transform: rotate(45deg);
+.price__btc-countdown svg {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 3.6rem;
+  height: 3.6rem;
+  transform: translate(-50%, -50%);
 }
 
-.circle__time {
+.price__btc-countdown svg circle {
+  fill: transparent;
+  stroke: var(--dark-color);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 105;
+  stroke-dashoffset: 0;
+}
+
+.price__btc-countdown svg circle.anime {
+  animation: anime-progress 30s linear infinite;
+}
+
+@keyframes anime-progress {
+  to {
+    stroke-dashoffset: 105;
+  }
+}
+
+.countdown__number {
   position: absolute;
   top: 50%;
   left: 50%;

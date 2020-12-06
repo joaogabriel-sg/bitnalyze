@@ -1,3 +1,7 @@
+[data-anime="scroll"] {
+  opacity: 1;
+}
+
 .js [data-anime="scroll"] {
   transform: translate3d(0, 2rem, 0);
   opacity: 0;
