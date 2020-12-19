@@ -4,7 +4,7 @@
 
 ##
 
-**Bitnalyze** is a study project created for Bitcoin analysis, presenting a graph of currency variation, timed update, bitcoin / real comparison and others.
+**Bitnalyze** is a study project created for Bitcoin analysis, presenting a graph of currency variation, timed update, bitcoin / real comparison and others.  
 See live on [Bitnalyze 🔥](https://joaogabriel-sg.github.io/bitnalyze/)
 
 ## 📚 What did I learn from the project??
